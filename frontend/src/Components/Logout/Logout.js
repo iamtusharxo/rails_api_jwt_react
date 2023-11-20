@@ -21,9 +21,9 @@ const Logout = () => {
           localStorage.removeItem('authToken');
           localStorage.removeItem('currentUser');
        }
-        navigate('/');
+        navigate('/home');
       } catch (error) {
-        navigate('/');
+        navigate('/home');
         console.error('Logout error:', error);
       }
     };

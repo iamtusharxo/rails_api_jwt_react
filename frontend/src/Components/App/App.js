@@ -6,16 +6,17 @@ import Registration from '../Registration/Registration';
 import Users from '../Users/Users';
 import Logout from '../Logout/Logout';
 import DashboardNavigator from '../Dashboard/DashboardNavigator/DashboardNavigator';
+import isLoggedUser from '../shared/config/isLoggedUser';
 
 function App() {
   return (
     <Router>
         <Routes>
         <Route path="/dashboard" element={<DashboardNavigator />} />
-          <Route path="/login/*" element={<Login />} />
-          <Route path="/register/*" element={<Registration />} />
-          <Route path="/home/*" element={<Home />} />
-          <Route path="/*" element={<Home />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/register" element={<Registration />} />
+          <Route path="/home" element={<Home />} />
+          <Route path="/*" element={isLoggedUser() ? <DashboardNavigator /> : <Home />} />
           <Route path="/users/*" element={<Users />} />
           <Route path="/logout/*" element={<Logout />} />
         </Routes>

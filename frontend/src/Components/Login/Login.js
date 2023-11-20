@@ -3,7 +3,7 @@ import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 import API_BASE_URL from '../shared/config/apiconfig';
 import isLoggedUser from '../shared/config/isLoggedUser';
-
+import './Login.css'
 const Login = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -43,20 +43,38 @@ const Login = () => {
 
   return (
     <div className="login-container">
-      <h2>Login</h2>
-      {error && <p style={{ color: 'red' }}>{error}</p>}
-      <form>
-        <div>
+      <h1>Login</h1>
+      <form className="login-form">
+        <div className="form-group">
           <label>Email:</label>
-          <input type="email" value={email} onChange={(e) => setEmail(e.target.value)} />
+          <input
+            type="email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+            className="input-field"
+          />
         </div>
-        <div>
+        <div className="form-group">
           <label>Password:</label>
-          <input type="password" value={password} onChange={(e) => setPassword(e.target.value)} />
+          <input
+            type="password"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+            className="input-field"
+          />
         </div>
-        <button type="button" onClick={handleLogin} disabled={loading}>
+        {error && <p className="error-message">{error}</p>}
+        <button type="button" onClick={handleLogin} disabled={loading} className="btn-submit">
           {loading ? 'Logging in...' : 'Login'}
         </button>
+
+        <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', flexDirection: 'column' }}>
+          <a className='footer-link' onClick={() => navigate('/forget-password')}>Forgot Password</a>
+          <div style={{ margin: '10px' }}></div>
+          <a className='footer-link' onClick={() => navigate('/home')}>Back to Home</a>
+        </div>
+
+
       </form>
     </div>
   );
