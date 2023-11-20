@@ -4,6 +4,6 @@ class UsersController < ApplicationController
     @users = Rails.cache.fetch('all_users', expires_in: 1.hour) do
       @users = User.all.includes(:reports)
     end
-    render json: @users, include: { reports: { only: :title } }
+    render json: @users, include: { reports: { only: :title }, role: { only: :name }}
   end
 end
