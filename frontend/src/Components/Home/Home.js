@@ -11,7 +11,7 @@ const Home = () => {
       <div className="container">
         <h2>Welcome to Our E-commerce Website</h2>
         <p>Explore our latest products and deals!</p>
-        
+        a
       </div>
     </div>
   );
