@@ -1,30 +1,43 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import API_BASE_URL from '../shared/config/apiconfig';
 import { useNavigate } from 'react-router-dom';
+import API_BASE_URL from '../shared/config/apiconfig';
+import isLoggedUser from '../shared/config/isLoggedUser';
+
 const Login = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
+  const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
+
+  useEffect(() => {
+    if (isLoggedUser()) {
+      navigate('/dashboard');
+      return;
+    }
+  }, [navigate]);
 
   const handleLogin = async () => {
     try {
+      setLoading(true);
       const response = await axios.post(`${API_BASE_URL}/login`, {
         user: {
           email: email,
           password: password,
-        }
+        },
       });
-      const current_user = response.data.status.data
-      const auth_token = response.headers.authorization;
-      localStorage.setItem('authToken', auth_token);
-      localStorage.setItem('currentUser', JSON.stringify(current_user));
-      navigate('/users')
+      const currentUser = response.data.status.data;
+      const authToken = response.headers.authorization;
+      localStorage.setItem('authToken', authToken);
+      localStorage.setItem('currentUser', JSON.stringify(currentUser));
+      navigate('/dashboard');
       setError('');
     } catch (error) {
-      console.log(error);
+      console.error(error);
       setError('Invalid email or password. Please try again.');
+    } finally {
+      setLoading(false);
     }
   };
 
@@ -41,7 +54,9 @@ const Login = () => {
           <label>Password:</label>
           <input type="password" value={password} onChange={(e) => setPassword(e.target.value)} />
         </div>
-        <button type="button" onClick={handleLogin}>Login</button>
+        <button type="button" onClick={handleLogin} disabled={loading}>
+          {loading ? 'Logging in...' : 'Login'}
+        </button>
       </form>
     </div>
   );

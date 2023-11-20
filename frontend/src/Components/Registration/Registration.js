@@ -3,9 +3,10 @@ import axios from 'axios';
 import API_BASE_URL from '../shared/config/apiconfig';
 import './Registration.css'
 import toastr from 'toastr';
-
+import { useNavigate } from 'react-router-dom';
 
 const Registration = () => {
+  const navigate = useNavigate();
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -31,21 +32,16 @@ const Registration = () => {
         },
       });
       toastr.success("Success Notification !",);
-      console.log('Registration successful:', response.data);
-
-      // Handle successful registration, e.g., redirect to login page
+      navigate('/login');
     } catch (error) {
       toastr.error(error.response.data.status);
       console.error('Registration error:', error.response.data);
-      // Handle registration error, e.g., display error message
     }
   };
 
   const validateForm = () => {
     let valid = true;
     const newErrors = { email: '', password: '' };
-
-    // Email validation
     if (!formData.email) {
       newErrors.email = 'Email is required';
       valid = false;
@@ -53,8 +49,6 @@ const Registration = () => {
       newErrors.email = 'Invalid email address';
       valid = false;
     }
-
-    // Password validation
     if (!formData.password) {
       newErrors.password = 'Password is required';
       valid = false;
