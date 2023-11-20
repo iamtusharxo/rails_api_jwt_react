@@ -3,7 +3,9 @@ import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 import API_BASE_URL from '../shared/config/apiconfig';
 import isLoggedUser from '../shared/config/isLoggedUser';
-import './Users.css'
+import './Users.css';
+import isUser from '../shared/config/isUser';
+
 const Users = () => {
   const [users, setUsers] = useState([]);
   const [currentUserEmail, setCurrentUserEmail] = useState('');
@@ -41,7 +43,9 @@ const Users = () => {
     fetchData();
   }, [isLoggedIn, navigate]);
 
-  if (!isLoggedIn) {
+  if (!isLoggedIn || !isUser()) {
+    // Redirect to another page (e.g., /dashboard) for users with roles other than 'user'
+    navigate('/dashboard');
     return null;
   }
 
@@ -62,24 +66,24 @@ const Users = () => {
             </tr>
           </thead>
           <tbody>
-          {users.map(user => (
-            <tr key={user.id}>
-              <td>{user.id}</td>
-              <td>{user.name}</td>
-              <td>{user.email}</td>
-              <td>{user.role.name}</td>
-              <td>
-                <ul>
-                  {user.reports.map(report => (
-                    <li key={report.title}>{report.title}</li>
-                  ))}
-                </ul>
-              </td>
-            </tr>
-          ))}
-        </tbody>
-      </table>
-    </div>
+            {users.map((user) => (
+              <tr key={user.id}>
+                <td>{user.id}</td>
+                <td>{user.name}</td>
+                <td>{user.email}</td>
+                <td>{user.role.name}</td>
+                <td>
+                  <ul>
+                    {user.reports.map((report) => (
+                      <li key={report.title}>{report.title}</li>
+                    ))}
+                  </ul>
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
     </div>
   );
 };

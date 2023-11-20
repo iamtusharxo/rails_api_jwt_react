@@ -13,10 +13,10 @@ const Login = () => {
 
   useEffect(() => {
     if (isLoggedUser()) {
-      navigate('/dashboard');
-      return;
+      navigate('/');
     }
   }, [navigate]);
+
 
   const handleLogin = async () => {
     try {
