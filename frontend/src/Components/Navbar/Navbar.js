@@ -1,16 +1,15 @@
-// Navbar.js
-
 import React from 'react';
 import './Navbar.css';
 
-const Navbar = () => {
+const Navbar = ({ scrollToSection }) => {
   return (
     <nav className="navbar">
-      <ul className="nav-list">
-        <li>Home</li>
-        <li>Products</li>
-        <li>About Us</li>
-      </ul>
+      <div className='navbar-left'>
+        <button onClick={() => scrollToSection('products')}>Products</button>
+        <button onClick={() => scrollToSection('ourMotto')}>Our Motto</button>
+        <button onClick={() => scrollToSection('aboutUs')}>About Us</button>
+      </div>
+      <div className='navbar-right'>
       <div className="dropdown">
         <button className="dropbtn">Login/Register</button>
         <div className="dropdown-content">
@@ -18,6 +17,8 @@ const Navbar = () => {
           <a href="/register">Register</a>
         </div>
       </div>
+      </div>
+
     </nav>
   );
 };
