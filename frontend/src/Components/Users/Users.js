@@ -4,6 +4,7 @@ import { useNavigate } from 'react-router-dom';
 import API_BASE_URL from '../shared/config/apiconfig';
 import isLoggedUser from '../shared/config/isLoggedUser';
 import './Users.css';
+import DashboardNavbar from '../Dashboard/shared/DashboardNavbar/DashboardNavbar';
 
 const Users = () => {
   const [users, setUsers] = useState([]);
@@ -48,6 +49,8 @@ const Users = () => {
   }
 
   return (
+    <>
+    <DashboardNavbar showDropdowns={false} showLogo={true} />
     <div className="users-container">
       {error && <p className="error-message">{error}</p>}
       <h2>User List</h2>
@@ -83,6 +86,8 @@ const Users = () => {
         </table>
       </div>
     </div>
+    </>
+
   );
 };
 

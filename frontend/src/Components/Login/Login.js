@@ -43,8 +43,8 @@ const Login = () => {
 
   return (
     <div className="login-container">
-      <h1>Login</h1>
       <form className="login-form">
+      <div className='login-heading'>Login</div>
         <div className="form-group">
           <label>Email:</label>
           <input

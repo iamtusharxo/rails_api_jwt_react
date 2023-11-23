@@ -109,3 +109,16 @@ body {
     padding: 20px !important;
   }
 }
+
+.logo {
+  text-align: center;
+}
+
+.login-heading {
+  color: #1104b2; /* Red background color */
+  padding: 10px; /* Adjust the padding as needed */
+  text-align: center; /* Center the text */
+  font-size: 24px; /* Adjust the font size as needed */
+  font-weight: bold; /* Optionally, make the text bold */
+  border-radius: 8px; /* Optional: Add border-radius for rounded corners */
+}

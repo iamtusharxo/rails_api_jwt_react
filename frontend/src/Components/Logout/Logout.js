@@ -23,6 +23,8 @@ const Logout = () => {
        }
         navigate('/home');
       } catch (error) {
+        localStorage.removeItem('authToken');
+        localStorage.removeItem('currentUser');
         navigate('/home');
         console.error('Logout error:', error);
       }
