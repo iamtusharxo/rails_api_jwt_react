@@ -7,6 +7,7 @@ import Users from '../Users/Users';
 import Logout from '../Logout/Logout';
 import DashboardNavigator from '../Dashboard/DashboardNavigator/DashboardNavigator';
 import isLoggedUser from '../shared/config/isLoggedUser';
+import Profile from '../Profile/Profile';
 
 const AppRouter = () => {
   return (
@@ -18,6 +19,7 @@ const AppRouter = () => {
         <Route path="/home" element={<Home />} />
         <Route path="/*" element={isLoggedUser() ? <DashboardNavigator /> : <Home />} />
         <Route path="/users/*" element={<Users />} />
+        <Route path="/profile" element={<Profile />} />
         <Route path="/logout/*" element={<Logout />} />
       </Routes>
     </Router>

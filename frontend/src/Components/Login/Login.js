@@ -28,8 +28,10 @@ const Login = () => {
         },
       });
       const currentUser = response.data.status.data;
+      const userId = currentUser.user.id;
       const authToken = response.headers.authorization;
       localStorage.setItem('authToken', authToken);
+      localStorage.setItem('UserId', userId);
       localStorage.setItem('currentUser', JSON.stringify(currentUser));
       navigate('/dashboard');
       setError('');

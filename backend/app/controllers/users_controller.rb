@@ -6,4 +6,9 @@ class UsersController < ApplicationController
     end
     render json: @users, include: { reports: { only: :title }, role: { only: :name }}
   end
+
+  def show
+    @user = User.find(params[:id])
+    render json: @user, include: { reports: { only: :title }, role: { only: :name }}
+  end
 end

@@ -20,11 +20,13 @@ const Logout = () => {
           });
           localStorage.removeItem('authToken');
           localStorage.removeItem('currentUser');
+          localStorage.removeItem('UserId');
        }
         navigate('/home');
       } catch (error) {
         localStorage.removeItem('authToken');
         localStorage.removeItem('currentUser');
+        localStorage.removeItem('UserId');
         navigate('/home');
         console.error('Logout error:', error);
       }

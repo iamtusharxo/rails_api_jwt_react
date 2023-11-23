@@ -8,6 +8,7 @@ const AdminDashboard = () => {
     <div>
       <DashboardNavbar showLogo={true} dropdownLinks={[
         { to: '/home', label: 'Home' },
+        { to: '/profile', label: 'Profile' },
         { to: '/users', label: 'User' },
         { to: '/logout', label: 'Logout' },
       ]} />
