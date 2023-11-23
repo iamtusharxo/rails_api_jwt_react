@@ -17,13 +17,18 @@ const Home = () => {
         <section id="products">
           <h2>Products</h2>
           <div className="product-images">
-            <img src="https://picsum.photos/900" alt="Product 1" />
+            {[1, 2, 3, 4, 5, 6, 7, 8, 9].map((index) => (
+              <img key={index} src={`https://picsum.photos/600?random=${index}`} alt={`Product ${index}`} />
+            ))}
           </div>
         </section>
       </div>
       <div className="ourMotto-container">
         <section id="ourMotto">
           <h2>Our Motto</h2>
+          {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12].map((index) => (
+            <img key={index} src={`https://picsum.photos/300?random=${index}`} alt={`Product ${index}`} />
+          ))}
           <p>
             At Our E-commerce, we are committed to providing high-quality products
             and exceptional customer service. Explore our collection and discover

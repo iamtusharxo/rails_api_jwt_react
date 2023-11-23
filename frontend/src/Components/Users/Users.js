@@ -49,8 +49,10 @@ const Users = () => {
   }
 
   return (
-    <>
-    <DashboardNavbar showDropdowns={false} showLogo={true} />
+    <div>
+      <DashboardNavbar showLogo={true} dropdownLinks={[
+        { to: '/logout', label: 'Logout' },
+      ]} />
     <div className="users-container">
       {error && <p className="error-message">{error}</p>}
       <h2>User List</h2>
@@ -86,7 +88,7 @@ const Users = () => {
         </table>
       </div>
     </div>
-    </>
+    </div>
 
   );
 };
