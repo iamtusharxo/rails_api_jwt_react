@@ -4,6 +4,7 @@ import './DashboardNavbar.css';
 import logo from '../../../../assets/images.png';
 
 const DashboardNavbar = ({ showDropdowns = true, showLogo = false, dropdownLinks = [] }) => {
+  const currentUserData = JSON.parse(localStorage.getItem('currentUser'));
   const currentUser = JSON.parse(localStorage.getItem('currentUser')) || {};
   const { user } = currentUser;
 
@@ -31,7 +32,7 @@ const DashboardNavbar = ({ showDropdowns = true, showLogo = false, dropdownLinks
       <div className="navbar-right">
         {showDropdowns ? (
           <div className="dropdown">
-            <button className="dropbtn">Dropdown</button>
+            <button className="dropbtn">{currentUserData.user.email}</button>
             <div className="dropdown-content">{renderDropdownContent()}</div>
           </div>
         ) : null}
