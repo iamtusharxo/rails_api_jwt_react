@@ -8,5 +8,5 @@ Rails.application.routes.draw do
     sessions: 'users/sessions',
     registrations: 'users/registrations'
   }
-  resources :users, only: [:index, :show]
+  resources :users, only: [:index, :show, :update]
 end

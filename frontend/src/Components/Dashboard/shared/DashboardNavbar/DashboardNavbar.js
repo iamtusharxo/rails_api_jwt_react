@@ -24,7 +24,7 @@ const DashboardNavbar = ({ showDropdowns = true, showLogo = false, dropdownLinks
     <nav className="navbar">
       <div className="navbar-left">
         {showLogo ? (
-          <Link to="/home">
+          <Link to="/">
             <img src={logo} alt="Logo" />
           </Link>
         ) : null}

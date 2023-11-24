@@ -1,0 +1,39 @@
+/* EditProfileModal.css */
+
+.modal-dialog {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 80vh; /* Adjust the height as needed */
+}
+
+.modal-content {
+  border: 2px solid #3498db; /* Border color */
+  width: 400px; /* Adjust the width as needed */
+  background-color: #ecf0f1; /* Background color */
+}
+
+.modal-header {
+  border-bottom: 2px solid #3498db; /* Border color for header */
+}
+
+.modal-title {
+  color: #3498db; /* Text color for the title */
+}
+
+.modal-body {
+  padding: 20px;
+}
+
+.modal-footer {
+  border-top: 2px solid #3498db; /* Border color for footer */
+}
+
+.close {
+  color: #3498db; /* Color for the close button */
+  font-size: 1.5rem; /* Adjust the font size as needed */
+}
+
+.close:hover {
+  color: #2980b9; /* Hover color for the close button */
+}
