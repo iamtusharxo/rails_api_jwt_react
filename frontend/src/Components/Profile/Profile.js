@@ -13,9 +13,9 @@ const Profile = () => {
   useEffect(() => {
     const fetchUserProfile = async () => {
       try {
-        const token = localStorage.getItem('authToken');
+        const token = sessionStorage.getItem('authToken');
         if (token) {
-          const userId = localStorage.getItem('UserId');
+          const userId = sessionStorage.getItem('UserId');
           const response = await axios.get(`${API_BASE_URL}/users/${userId}`, {
             headers: {
               Authorization: `${token}`,

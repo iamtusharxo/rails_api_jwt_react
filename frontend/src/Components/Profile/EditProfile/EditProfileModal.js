@@ -21,7 +21,7 @@ const EditProfileModal = ({ userId, isOpen, onClose, onUpdate }) => {
 
   const handleUpdateProfile = async () => {
     try {
-      const token = localStorage.getItem('authToken');
+      const token = sessionStorage.getItem('authToken');
       await axios.put(`${API_BASE_URL}/users/${userId}`, editedProfile, {
         headers: {
           Authorization: `${token}`,

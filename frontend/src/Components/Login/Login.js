@@ -30,9 +30,11 @@ const Login = () => {
       const currentUser = response.data.status.data;
       const userId = currentUser.user.id;
       const authToken = response.headers.authorization;
-      localStorage.setItem('authToken', authToken);
-      localStorage.setItem('UserId', userId);
-      localStorage.setItem('currentUser', JSON.stringify(currentUser));
+
+      sessionStorage.setItem('authToken', authToken);
+      sessionStorage.setItem('UserId', userId);
+      sessionStorage.setItem('currentUser', JSON.stringify(currentUser));
+
       navigate('/dashboard');
       setError('');
     } catch (error) {
@@ -42,6 +44,7 @@ const Login = () => {
       setLoading(false);
     }
   };
+
 
   return (
     <div className="login-container">

@@ -1,6 +1,6 @@
 const isLoggedUser = () => {
-  const authToken = localStorage.getItem('authToken');
-  const currentUser = localStorage.getItem('currentUser');
+  const authToken = sessionStorage.getItem('authToken');
+  const currentUser = sessionStorage.getItem('currentUser');
   if (authToken && currentUser)
     return true
   else

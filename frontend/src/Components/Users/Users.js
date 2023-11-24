@@ -21,7 +21,7 @@ const Users = () => {
 
     const fetchData = async () => {
       try {
-        const token = localStorage.getItem('authToken');
+        const token = sessionStorage.getItem('authToken');
         if (token) {
           const response = await axios.get(`${API_BASE_URL}/users`, {
             headers: {
@@ -30,7 +30,7 @@ const Users = () => {
           });
           setUsers(response.data);
           setError('');
-          const currentUserData = JSON.parse(localStorage.getItem('currentUser'));
+          const currentUserData = JSON.parse(sessionStorage.getItem('currentUser'));
           if (currentUserData) {
             setCurrentUserEmail(currentUserData.user.email);
           }

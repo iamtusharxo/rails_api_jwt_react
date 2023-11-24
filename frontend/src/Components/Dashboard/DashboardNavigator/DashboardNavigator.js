@@ -7,7 +7,7 @@ import UserDashboard from '../UserDashboard/UserDashboard';
 import SuperAdminDashboard from '../SuperAdminDashboard/SuperAdminDashboard';
 
 const DashboardNavigator = () => {
-  const currentUser = JSON.parse(localStorage.getItem('currentUser')) || {};
+  const currentUser = JSON.parse(sessionStorage.getItem('currentUser')) || {};
   const { user } = currentUser;
   if (!user || !user.role) {
     return <Navigate to="/login" />;

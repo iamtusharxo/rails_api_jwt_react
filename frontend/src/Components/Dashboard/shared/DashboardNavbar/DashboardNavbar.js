@@ -4,8 +4,8 @@ import './DashboardNavbar.css';
 import logo from '../../../../assets/images.png';
 
 const DashboardNavbar = ({ showDropdowns = true, showLogo = false, dropdownLinks = [] }) => {
-  const currentUserData = JSON.parse(localStorage.getItem('currentUser'));
-  const currentUser = JSON.parse(localStorage.getItem('currentUser')) || {};
+  const currentUserData = JSON.parse(sessionStorage.getItem('currentUser'));
+  const currentUser = JSON.parse(sessionStorage.getItem('currentUser')) || {};
   const { user } = currentUser;
 
   const renderDropdownContent = () => {
