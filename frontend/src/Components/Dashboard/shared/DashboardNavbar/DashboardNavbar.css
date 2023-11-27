@@ -1,11 +1,9 @@
-/* DashboardNavbar.css */
-
 .navbar {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: #333; /* Navbar background color */
-  padding: 10px 20px; /* Adjust padding as needed */
+  background-color: #0aefff;
+  padding: 10px 20px;
 }
 
 .logo {
@@ -14,9 +12,9 @@
 }
 
 .logo img {
-  width: 40px; /* Adjust the width of the logo as needed */
-  height: 40px; /* Adjust the height of the logo as needed */
-  margin-right: 10px; /* Add margin between logo and text */
+  width: 40px;
+  height: 40px;
+  margin-right: 10px;
 }
 
 .navbar-right {
@@ -24,15 +22,14 @@
   align-items: center;
 }
 
-/* Style for the dropdown (you can customize as needed) */
 .dropdown {
   position: relative;
 }
 
 .dropbtn {
-  background-color: #555; /* Dropdown button background color */
-  color: white; /* Dropdown button text color */
-  padding: 10px 15px; /* Adjust padding as needed */
+  background-color: #555;
+  color: white;
+  padding: 10px 15px;
   border: none;
   border-radius: 5px;
   cursor: pointer;
@@ -41,14 +38,14 @@
 .dropdown-content {
   display: none;
   position: absolute;
-  background-color: #f9f9f9; /* Dropdown content background color */
+  background-color: #f9f9f9;
   min-width: 160px;
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
   z-index: 1;
 }
 
 .dropdown-content a {
-  color: black; /* Dropdown content text color */
+  color: black;
   padding: 12px 16px;
   text-decoration: none;
   display: block;
@@ -62,7 +59,6 @@
   display: block;
 }
 
-/* Add this to your DashboardNavbar.css */
 
 .navbar-left {
   display: flex;

@@ -17,10 +17,10 @@ const AppRouter = () => {
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Registration />} />
         <Route path="/home" element={<Home />} />
-        <Route path="/*" element={isLoggedUser() ? <DashboardNavigator /> : <Home />} />  
-        <Route path="/users/*" element={<Users />} />
+        <Route path="/*" element={isLoggedUser() ? <DashboardNavigator /> : <Home />} />
+        <Route path="/users" element={<Users />} />
         <Route path="/profile" element={<Profile />} />
-        <Route path="/logout/*" element={<Logout />} />
+        <Route path="/logout" element={<Logout />} />
       </Routes>
     </Router>
   );

@@ -36,6 +36,9 @@ const Users = () => {
           }
         }
       } catch (error) {
+        if (error.response && error.response.status === 401) {
+          navigate('/logout');
+        }
         setError('Error fetching user data');
       }
     };

@@ -14,9 +14,8 @@ class UsersController < ApplicationController
 
   def update
     @user = User.find(params[:id])
-    if @user
-      user_name = @user.name;
-      @user.update(name: user_name);
+    if @user == current_user
+      @user.update(user_params);
       render json: @user
     else
       render json: { error: 'Failed to update user profile' }, status: :unprocessable_entity

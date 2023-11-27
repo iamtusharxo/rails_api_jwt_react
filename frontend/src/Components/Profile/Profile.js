@@ -4,12 +4,13 @@ import './Profile.css';
 import DashboardNavbar from '../Dashboard/shared/DashboardNavbar/DashboardNavbar';
 import API_BASE_URL from '../shared/config/apiconfig';
 import EditProfileModal from './EditProfile/EditProfileModal';
+import { useNavigate } from 'react-router-dom';
 
 const Profile = () => {
   const [userProfile, setUserProfile] = useState({});
   const [error, setError] = useState('');
   const [isEditModalOpen, setIsEditModalOpen] = useState(false);
-
+  const navigate = useNavigate();
   useEffect(() => {
     const fetchUserProfile = async () => {
       try {
@@ -26,15 +27,18 @@ const Profile = () => {
           setError('');
         }
       } catch (error) {
+        if (error.response && error.response.status === 401) {
+          navigate('/logout');
+        }
         setError('Error fetching user profile');
       }
     };
 
     fetchUserProfile();
-  }, []);
+  }, [isEditModalOpen]);
 
   const handleUpdateProfile = () => {
-    // fetchUserProfile();
+    setIsEditModalOpen(false);
   };
 
   return (
@@ -53,7 +57,6 @@ const Profile = () => {
           <button onClick={() => setIsEditModalOpen(true)}>Edit Profile</button>
         </div>
       </div>
-
       <EditProfileModal
         userId={userProfile.id}
         isOpen={isEditModalOpen}
@@ -63,6 +66,5 @@ const Profile = () => {
     </div>
   );
 };
-
 
 export default Profile;
