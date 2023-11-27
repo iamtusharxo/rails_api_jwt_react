@@ -1,0 +1,71 @@
+.custom-modal {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 60vh;
+  width: 30vw;
+  margin: auto;
+}
+
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 15px;
+  background-color: #3498db; /* Blue background for the header */
+  color: #fff; /* White text color for the header */
+}
+
+.modal-body {
+  padding: 15px;
+}
+
+.modal-footer {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  width: 100%;
+  padding: 15px;
+  background-color: #f5f5f5;
+}
+
+.close-button {
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  color: #e74c3c;
+  cursor: pointer;
+}
+
+.save-button {
+  margin-left: 10px;
+  background-color: #3498db;
+  color: #fff;
+}
+
+.modal-footer Button {
+  margin: 0;
+}
+
+.custom-modal .modal-footer button.btn-primary:enabled {
+  background-color: #007bff;
+  color: #fff;
+}
+
+.custom-modal .modal-footer button.btn-primary:disabled {
+  background-color: #6c757d;
+  color: #fff;
+  cursor: not-allowed;
+}
+
+.custom-modal .modal-footer {
+  display: flex;
+  justify-content: space-between;
+}
+
+.custom-modal .modal-footer button {
+  margin-right: 4px;
+}
+

@@ -1,0 +1,18 @@
+.profile-container {
+  max-width: 400px;
+  margin: auto;
+}
+
+.user-info {
+  margin-top: 15px;
+}
+
+.user-info p {
+  margin: 5px 0;
+}
+
+.button-group {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 15px;
+}

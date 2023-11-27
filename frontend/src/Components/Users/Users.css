@@ -1,0 +1,44 @@
+.users-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.error-message {
+  color: red;
+}
+
+.user-list {
+  margin-top: 20px;
+}
+
+.user-list table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+.user-list th, .user-list td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: left;
+}
+
+.user-list th {
+  background-color: #f2f2f2;
+}
+
+.user-list ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.user-list li {
+  margin-bottom: 5px;
+}
+
+.current-user {
+  margin-top: 20px;
+  font-weight: bold;
+}

@@ -9,8 +9,8 @@ const Logout = () => {
   const navigate = useNavigate();
   useEffect(() => {
     const handleLogout = async () => {
-      const token = localStorage.getItem('authToken');
-      const current_user = localStorage.getItem('currentUser');
+      const token = sessionStorage.getItem('authToken');
+      const current_user = sessionStorage.getItem('currentUser');
       try {
         if (token && current_user){
           await axios.delete(`${API_BASE_URL}/logout`, {
@@ -18,12 +18,12 @@ const Logout = () => {
               Authorization: `${token}`,
             },
           });
-          localStorage.removeItem('authToken');
-          localStorage.removeItem('currentUser');
+          sessionStorage.clear();
        }
-        navigate('/');
+        navigate('/home');
       } catch (error) {
-        navigate('/');
+        sessionStorage.clear();
+        navigate('/home');
         console.error('Logout error:', error);
       }
     };

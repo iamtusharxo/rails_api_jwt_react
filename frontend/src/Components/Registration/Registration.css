@@ -1,49 +1,99 @@
-.container {
-  max-width: 400px;
+/* Registration.css */
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #fcfcfc;
+}
+
+.registration-container {
+  max-width: 360px;
   margin: 0 auto;
-  padding: 20px;
-  border: 1px solid #ccc;
-  border-radius: 8px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  margin-top: calc(100vh - 80vh);
+  margin-bottom: 40px;
 }
 
-h2 {
-  text-align: center;
-  color: #333;
-}
-
-form {
-  display: flex;
-  flex-direction: column;
-}
-
-label {
-  margin-top: 10px;
-  margin-bottom: 5px;
-  color: #333;
-}
-
-input {
-  padding: 8px;
-  margin-bottom: 10px;
-  border: 1px solid #ccc;
+.registration-form {
+  background: #fff;
+  padding: 28px 44px;
+  box-shadow: 0 10px 40px -14px rgba(0, 0, 0, 0.25);
   border-radius: 4px;
 }
 
-.error {
-  color: #ff0000;
-  margin-bottom: 10px;
+.registration-form h2 {
+  color: #1104b2;
+  font-size: 26px;
+  margin-bottom: 36px;
+  position: relative;
 }
 
-button {
-  background-color: #4caf50;
-  color: white;
-  padding: 10px;
+.registration-form h2::before {
+  width: 28px;
+  height: 5px;
+  content: "";
+  position: absolute;
+  bottom: -2px;
+  left: 50%;
+  margin-left: -14px;
+  background-color: #1104b2;
+}
+
+.registration-form h2::after {
+  width: 100px;
+  height: 1px;
+  content: "";
+  position: relative;
+  margin-top: 25px;
+  left: 50%;
+  margin-left: -50px;
+  background-color: #1104b2;
+}
+
+.registration-form .error {
+  font-size: 13px;
+  color: red;
+  margin-top: 1px;
+}
+
+.registration-form label {
+  font-size: 13px;
+  color: #000;
+  font-weight: bold;
+  text-align: left;
+  padding-bottom: 10px;
+}
+
+.registration-form input {
+  width: 100%;
+  padding: 13px;
+  border: 1px solid #d6d8e6;
+  border-radius: 4px;
+  font-size: 16px;
+  margin-bottom: 20px;
+}
+
+.registration-form input:focus {
+  outline: none;
+}
+
+.registration-form button {
+  width: 100%;
+  padding: 12px;
+  font-size: 18px;
+  background: #1104b2;
+  color: #fff;
   border: none;
-  border-radius: 4px;
+  border-radius: 100px;
   cursor: pointer;
+  font-weight: bold;
 }
 
-button:hover {
-  background-color: #45a049;
+.registration-form button:hover {
+  background: #1104b2;
+}
+
+.footer-link{
+  color: #1104b2;
+}
+.footer-link:hover{
+  color: #12aaec;
 }

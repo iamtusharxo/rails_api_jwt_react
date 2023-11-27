@@ -1,14 +1,27 @@
-users = User.create([
-  { name: 'User 1', email: 'user1@example.com', password: 'password1' },
-  { name: 'User 2', email: 'user2@example.com', password: 'password2' },
-])
+# Create users without roles
+superadmin = User.create(email: 'superadmin@example.com', password: 'password', name: 'Super Admin')
+admin = User.create(email: 'admin@example.com', password: 'password', name: 'Admin')
+user = User.create(email: 'user@example.com', password: 'password', name: 'User')
 
+# Create roles
+Role.create(name: 'superadmin')
+Role.create(name: 'admin')
+Role.create(name: 'user')
+
+# Update users with roles
+superadmin.update(role: Role.find_by(name: 'superadmin'))
+admin.update(role: Role.find_by(name: 'admin'))
+user.update(role: Role.find_by(name: 'user'))
+
+# Create reports
 reports = Report.create([
   { title: 'Report A' },
   { title: 'Report B' },
 ])
-users[0].reports << reports[0]
-users[0].reports << reports[1]
-users[1].reports << reports[0]
+
+# Assign reports to users
+superadmin.reports << reports[0]
+superadmin.reports << reports[1]
+admin.reports << reports[0]
 
 puts 'Seeding completed!'

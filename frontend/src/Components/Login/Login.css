@@ -1,37 +1,124 @@
-/* app/assets/stylesheets/users/sessions/Login.css */
-
-.login-container {
-  max-width: 400px;
-  margin: 0 auto;
-  padding: 20px;
-  border: 1px solid #ccc;
-  border-radius: 8px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+body {
+  font-family: Arial, sans-serif;
+  background-color: #fcfcfc;
 }
 
-form {
+.logo {
+  max-width: 200px;
+  position: relative;
+  top: 40px;
+}
+
+.login-form {
+  background: #fff;
+  max-width: 360px;
+  padding: 28px 44px;
+  box-shadow: 0 10px 40px -14px rgba(0, 0, 0, 0.25);
+  border-radius: 4px;
+  margin: 0px auto;
+  margin-top: calc(100vh - 80vh);
+  margin-bottom: 40px;
+}
+
+.login-form h1 {
+  color: #1104b2;
+  font-size: 26px;
+  margin-bottom: 36px;
+  position: relative;
+}
+
+.login-form h1::before {
+  width: 28px;
+  height: 5px;
+  display: block;
+  content: "";
+  position: absolute;
+  bottom: -2px;
+  left: 50%;
+  margin-left: -14px;
+  background-color: #1104b2;
+}
+
+.login-form h1::after {
+  width: 100px;
+  height: 1px;
+  display: block;
+  content: "";
+  position: relative;
+  margin-top: 25px;
+  left: 50%;
+  margin-left: -50px;
+  background-color: #1104b2;
+}
+
+.login-form .form-group {
   display: flex;
   flex-direction: column;
+  margin-bottom: 20px;
 }
 
-label {
-  margin-bottom: 8px;
+.login-form .form-group label {
+  font-size: 13px;
+  color: #000;
+  font-weight: bold;
+  text-align: left;
+  padding-bottom: 10px;
 }
 
-input {
-  padding: 8px;
-  margin-bottom: 16px;
-}
-
-button {
-  background-color: #4caf50;
-  color: white;
-  padding: 10px;
-  border: none;
+.login-form .form-group input {
+  flex: 1;
+  padding: 13px;
+  border: 1px solid #d6d8e6;
   border-radius: 4px;
-  cursor: pointer;
+  font-size: 16px;
 }
 
-button:hover {
-  background-color: #45a049;
+.login-form .form-group input:focus {
+  outline: none;
+}
+
+.login-form .btn-submit {
+  width: 100%;
+  padding: 12px;
+  font-size: 18px;
+  background: #1104b2;
+  color: #fff;
+  border: none;
+  border-radius: 100px;
+  cursor: pointer;
+  font-weight: bold;
+  margin-top: 15px;
+}
+
+.login-form .btn-submit:hover {
+  background: #1104b2;
+}
+
+.login-form .forgot-link {
+  color: #1104b2;
+}
+
+@media (max-width: 768px) {
+  body {
+    margin: 0 18px;
+  }
+  .logo {
+    width: 150px;
+  }
+  .login-form {
+    padding: 20px !important;
+  }
+}
+
+.logo {
+  text-align: center;
+}
+
+.login-heading {
+  color: #1104b2; /* Red background color */
+  padding: 10px; /* Adjust the padding as needed */
+  text-align: center; /* Center the text */
+  font-size: 24px; /* Adjust the font size as needed */
+  font-weight: bold; /* Optionally, make the text bold */
+  border-radius: 8px; /* Optional: Add border-radius for rounded corners */
 }
